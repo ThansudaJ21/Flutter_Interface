@@ -9,6 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool _lights = false;
   @override
   Widget build(BuildContext context) {
     return ListView(children: [
@@ -17,36 +18,44 @@ class _HomePageState extends State<HomePage> {
         height: 50,
         child: Card(
           color: Colors.green[50],
-          child: Text(
-            'เข้าสู่ระบบ',
-            style: TextStyle(
-              color: Colors.green[900],
-              fontSize: 15,
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Text(
+              'เข้าสู่ระบบ',
+              style: TextStyle(
+                color: Colors.green[900],
+                fontSize: 15,
+              ),
+              textAlign: TextAlign.left,
             ),
-            textAlign: TextAlign.left,
           ),
-        ),
-      ),
-      ElevatedButton(
-        onPressed: () {},
-        child: const Text(
-          'ติดตามพัสดุ',
-        ),
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.blue[300]),
-          padding:
-              MaterialStateProperty.all(EdgeInsets.fromLTRB(20, 20, 20, 20)),
         ),
       ),
       Center(
         child: Padding(
           padding: const EdgeInsets.all(16),
-          child: Column(children: [
-            SizedBox(
-              height: 10,
+          child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text(
+                'ติดตามพัสดุ',
+              ),
+              style: ButtonStyle(
+                // minimumSize: MaterialStateProperty.all(Size(10, 10)),
+                backgroundColor: MaterialStateProperty.all(Colors.blue[300]),
+                padding: MaterialStateProperty.all(
+                    EdgeInsets.fromLTRB(20, 20, 20, 20)),
+              ),
+            ),
+            Divider(
+              height: 20,
+              thickness: 1,
+              indent: 5,
+              endIndent: 0,
+              color: Colors.grey,
             ),
             SizedBox(
-              height: 10,
+              height: 15,
             ),
             Image.asset("assets/green_bus.jpg"),
           ]),

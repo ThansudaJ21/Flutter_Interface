@@ -8,7 +8,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,31 +38,36 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green[900],
-        title: Text("GREENBUS", style: TextStyle(fontFamily: 'DSN')),
-        centerTitle: true,
-      ),
+          backgroundColor: Colors.green[900],
+          title: Text("GREENBUS", style: TextStyle(fontFamily: 'DSN')),
+          centerTitle: true,
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.arrow_drop_down_circle),
+              tooltip: 'Show Snackbar',
+              onPressed: () {},
+            ),
+          ]),
       drawer: SideMenu(),
       body: HomePage(),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.airport_shuttle),
+            icon: Icon(Icons.airport_shuttle, color: Colors.green[900]),
             label: 'ซื้อตั๋วโดยสาร',
-            backgroundColor: Color(0xFFA5D6A8),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_bag),
-              label: 'ข้อมูลการเดินทาง',
-              backgroundColor: Color(0xFFA5D6A8)),
+            icon: Icon(Icons.shopping_bag, color: Colors.green[900]),
+            label: 'ข้อมูลการเดินทาง',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.document_scanner),
-              label: 'ข้อมูลส่วนตัว',
-              backgroundColor: Color(0xFFA5D6A8)),
+            icon: Icon(Icons.document_scanner, color: Colors.green[900]),
+            label: 'ข้อมูลส่วนตัว',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.local_printshop),
-              label: 'พิมพ์ตั๋วโดยสาร',
-              backgroundColor: Color(0xFFA5D6A8)),
+            icon: Icon(Icons.local_printshop, color: Colors.green[900]),
+            label: 'พิมพ์ตั๋วโดยสาร',
+          )
         ],
         currentIndex: _currentIndex,
         selectedItemColor: Colors.green[900],
